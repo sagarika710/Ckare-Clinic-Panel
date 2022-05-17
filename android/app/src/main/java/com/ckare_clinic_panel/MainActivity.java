@@ -4,13 +4,11 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 import android.os.Bundle;
+import com.BV.LinearGradient.LinearGradientPackage; 
 
 public class MainActivity extends ReactActivity {
 
-  @Override
-protected void onCreate(Bundle savedInstanceState) {
-  super.onCreate(null);
-}
+
 
   /**
    * Returns the name of the main component registered from JavaScript. This is used to schedule
@@ -21,6 +19,12 @@ protected void onCreate(Bundle savedInstanceState) {
     return "Ckare_Clinic_Panel";
   }
 
+
+
+  @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
   /**
    * Returns the instance of the {@link ReactActivityDelegate}. There the RootView is created and
    * you can specify the rendered you wish to use (Fabric or the older renderer).
