@@ -1,14 +1,22 @@
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
+import { useNavigation } from "@react-navigation/native"
 
 function Home() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-      </View>
-    );
-  }
+
+  const navigation = useNavigation();
+
+  return (
+    <TouchableOpacity onPress={() => {
+      navigation.navigate("CrtPrescription", {
+
+      })
+    }}
+      style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+    </TouchableOpacity>
+  );
+}
 export default Home;
