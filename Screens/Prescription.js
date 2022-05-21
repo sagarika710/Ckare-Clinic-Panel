@@ -7,42 +7,103 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const { height, width } = Dimensions.get("screen");
 
-export default function CrtPrescription() {
+export default function Prescription() {
     const navigation = useNavigation();
 
     return (
         <View style={styles.mainContainer}>
-
-
-            <View style={styles.firstMainDiv}>
-                <View style={styles.firstwhiteDiv}>
-                    <View style={styles.backIconView}>
-                        <TouchableOpacity style={styles.clickBackIcon} onPress={() => {
-                            navigation.goBack()
-                        }} >
-                            <Ionicons name="chevron-back-outline" color={"gray"} size={24} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.firstMainDiv}>
-                        <LinearGradient colors={['#00E0C5', '#009987',]} style={styles.letterBackground}>
-                            <Text style={{ fontSize: 30, color: "#ffffff", fontWeight: "700" }}>S</Text>
-
-                        </LinearGradient>
-                        <View style={{ marginBottom: 20 }}>
-                            <Text style={{ fontSize: 20, fontFamily: "Mulish" }}>Sagarika Mohanty</Text>
+            <ScrollView>
+                <View style={styles.firstMainDiv}>
+                    <View style={styles.firstwhiteDiv}>
+                        <View style={styles.backIconView}>
+                            <TouchableOpacity style={styles.clickBackIcon} onPress={() => {
+                                navigation.goBack()
+                            }} >
+                                <Ionicons name="chevron-back-outline" color={"gray"} size={24} />
+                            </TouchableOpacity>
                         </View>
-                        <View >
-                            <Text style={{ fontSize: 14, color: "#009987" }}>23 Years old </Text>
+                        <View style={styles.firstMainDiv}>
+                            <LinearGradient colors={['#00E0C5', '#009987',]} style={styles.letterBackground}>
+                                <Text style={{ fontSize: 30, color: "#ffffff", fontWeight: "700" }}>S</Text>
+
+                            </LinearGradient>
+                            <View style={{ marginBottom: 10 }}>
+                                <Text style={{ fontSize: 20, fontFamily: "Mulish" }}>Sagarika Mohanty</Text>
+                            </View>
+                            <View >
+                                <Text style={{ fontSize: 14, color: "#009987" }}>23 Years old </Text>
+                            </View>
+
                         </View>
 
+
                     </View>
+
+                </View>
+                <View>
+                    <View style={styles.iconsRighesidediv}>
+                        <View style={styles.iconsRigheside}>
+                            <Ionicons name="create" size={15} color={"#00e0c5"} />
+
+                        </View>
+                        <View style={styles.iconsRigheside}>
+                            <FontAwesome5Icons name="share" size={15} color={"#00e0c5"} />
+
+                        </View>
+                    </View>
+                </View>
+                <View>
+                    <View style={{ marginHorizontal: 15, marginVertical: 5 }}>
+                        <Text style={{ fontSize: 18 }}>Prescription</Text>
+                    </View>
+                    <View style={{ marginHorizontal: 15, marginVertical: 2 }}>
+                        <Text style={{ fontSize: 14, letterSpacing: 0.23, lineHeight: 20 }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus consectetur ante turpis, a sodales dolor rutrum ut. Mauris sed lectus a nunc dictum cursus. Praesent aliquam leo sit amet elit.
+                        </Text>
+
+                    </View>
+                    <View style={{ marginHorizontal: 15, marginVertical: 5 }}>
+                        <Text style={{ fontSize: 18 }}>Test</Text>
+                    </View>
+                    <View style={{ marginHorizontal: 15 }}>
+                        <Text style={{ fontSize: 14, letterSpacing: 0.23, lineHeight: 20 }}>CBC
+                        </Text>
+                        <Text style={{ fontSize: 14, letterSpacing: 0.23, lineHeight: 20 }}>Covid Test
+                        </Text>
+
+
+                    </View>
+                    <View style={{ marginHorizontal: 15, marginVertical: 10 }}>
+                        <Text style={{ fontSize: 18 }}>Medicine</Text>
+                    </View>
+                    <View style={{ marginHorizontal: 15 }}>
+                        <Text style={{ fontSize: 14, letterSpacing: 0.23, lineHeight: 20 }}>Paracetomol
+                        </Text>
+                        <Text style={{ fontSize: 14, letterSpacing: 0.23, lineHeight: 20 }}>Pana-40
+                        </Text>
+
+
+                    </View>
+
 
 
                 </View>
 
-            </View>
+                <View style={{ alignItems: "center" }}>
+                    <LinearGradient colors={['#00E0C5', '#009987',]} style={styles.previewbtndiv}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate("Patientlist", {
+
+                                })
+                            }}
+                            style={styles.previewbtn}>
+                            <Text style={{ color: "#ffff", fontSize: 18 }}>Save Prescription</Text>
+                        </TouchableOpacity>
+                    </LinearGradient>
+                </View>
 
 
+            </ScrollView>
         </View>
     )
 }
@@ -56,8 +117,8 @@ const styles = StyleSheet.create({
     },
     clickBackIcon:
     {
-        height: 50,
-        width: 50,
+        height: 40,
+        width: 40,
         borderRadius: 50,
         alignItems: "center",
         justifyContent: "center",
@@ -69,7 +130,7 @@ const styles = StyleSheet.create({
     },
 
     firstwhiteDiv: {
-        height: Dimensions.get('window').height * 0.45,
+        height: Dimensions.get('window').height * 0.40,
         width: Dimensions.get('window').width,
         backgroundColor: "#EFF3FA",
         borderBottomEndRadius: 40,
@@ -106,6 +167,36 @@ const styles = StyleSheet.create({
         borderColor: "#e1e1e1",
         borderRadius: 5,
     },
+    previewbtndiv: {
+        width: 340,
+        padding: 5,
+        marginVertical: 10,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 30,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.39,
+        shadowRadius: 1.41,
+        elevation: 2,
+
+
+    },
+    previewbtn:
+    {
+        height: 42,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    iconsRighesidediv:
+    {
+        flexDirection: "row", alignItems: "flex-end", justifyContent: "flex-end", margin: 5
+    },
+    iconsRigheside:
+        { width: 25, height: 25, borderColor: "#000000", backgroundColor: "red", alignItems: "center", justifyContent: "center", margin: 5, borderRadius: 1, backgroundColor: "white", borderWidth: 0.1 }
 
 
 })

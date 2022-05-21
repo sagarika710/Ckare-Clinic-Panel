@@ -7,12 +7,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const { height, width } = Dimensions.get("screen");
 
-export default function CrtPrescription() {
+export default function Crtprescription() {
     const navigation = useNavigation();
 
     return (
         <View style={styles.mainContainer}>
-            <ScrollView style={{ flex: 1 }}>
+            <ScrollView>
 
                 <View style={styles.firstMainDiv}>
                     <View style={styles.firstwhiteDiv}>
@@ -28,7 +28,7 @@ export default function CrtPrescription() {
                                 <Text style={{ fontSize: 30, color: "#ffffff", fontWeight: "700" }}>S</Text>
 
                             </LinearGradient>
-                            <View style={{ marginBottom: 20 }}>
+                            <View style={{ marginBottom: 10 }}>
                                 <Text style={{ fontSize: 20, fontFamily: "Mulish" }}>Sagarika Mohanty</Text>
                             </View>
                             <View >
@@ -49,7 +49,10 @@ export default function CrtPrescription() {
                         <View style={{ marginBottom: 20 }}>
                             <Text style={{ fontSize: 14, fontFamily: "Mulish" }}>Please upload images of prescription</Text>
                         </View>
-                        <View style={{ borderWidth: 1, width: "85%", justifyContent: "center", alignItems: "center", paddingHorizontal: 5, paddingVertical: 5, borderRadius: 7, borderColor: "#00E0C5" }}>
+                        <View style={{ borderWidth: 1, width: "85%", justifyContent: "center", alignItems: "center", paddingHorizontal: 5, paddingVertical: 5, borderRadius: 7, borderColor: "#00E0C5", flexDirection: "row" }}>
+                            <FontAwesome5Icons name="file-medical" size={15} color={"#00E0C5"} style=
+                                {{ marginRight: 7 }}
+                            />
                             <Text style={{ color: "#00E0C5", fontSize: 16, textTransform: "capitalize" }}>upload prescription</Text>
                         </View>
 
@@ -70,18 +73,19 @@ export default function CrtPrescription() {
                         <TextInput style={{ fontFamily: "Mulish" }} numberOfLines={15} multiline={true}></TextInput>
                     </View>
                 </View>
+                <View style={{ alignItems: "center" }}>
+                    <LinearGradient colors={['#00E0C5', '#009987',]} style={styles.previewbtndiv}>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation.navigate("Prescription", {
 
-                <View style={{ marginVertical: 20 }}>
-                    <TouchableOpacity onPress={() => {
-                        navigation.navigate("Prescription", {
-
-                        })
-                    }}
-                        style={{ backgroundColor: "#00E0C5", padding: 15, width: "92%", marginHorizontal: 15, justifyContent: "center", alignItems: "center", borderRadius: 40 }}>
-                        <Text style={{ color: "#ffff" }}>Preview Prescription</Text>
-                    </TouchableOpacity>
+                                })
+                            }}
+                            style={styles.previewbtn}>
+                            <Text style={{ color: "#ffff", fontSize: 18 }}>Preview Prescription</Text>
+                        </TouchableOpacity>
+                    </LinearGradient>
                 </View>
-
 
 
             </ScrollView>
@@ -98,8 +102,8 @@ const styles = StyleSheet.create({
     },
     clickBackIcon:
     {
-        height: 50,
-        width: 50,
+        height: 40,
+        width: 40,
         borderRadius: 50,
         alignItems: "center",
         justifyContent: "center",
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
     },
 
     firstwhiteDiv: {
-        height: Dimensions.get('window').height * 0.45,
+        height: Dimensions.get('window').height * 0.40,
         width: Dimensions.get('window').width,
         backgroundColor: "#EFF3FA",
         borderBottomEndRadius: 40,
@@ -148,6 +152,29 @@ const styles = StyleSheet.create({
         borderColor: "#e1e1e1",
         borderRadius: 5,
     },
+    previewbtndiv: {
+        width: 335,
+        padding: 5,
+        marginVertical: 10,
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 30,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 1,
+        },
+        shadowOpacity: 0.39,
+        shadowRadius: 1.41,
+        elevation: 2,
 
+
+    },
+    previewbtn:
+    {
+        height: 42,
+        justifyContent: "center",
+        alignItems: "center"
+    }
 
 })
