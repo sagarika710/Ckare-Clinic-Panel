@@ -17,7 +17,11 @@ import Home from './Screens/Home';
 
 //------DEEPTI--------
 
-
+import Crtprescription from './Screens/Crtprescription'
+import Prescription from './Screens/Prescription'
+import Patientlist from './Screens/Patientlist';
+import Checkprescription from './Screens/Checkprescription';
+import Memberahipfreetrail from './Screens/Membershipfreetrail';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -30,6 +34,11 @@ function App() {
         {/* ------DINESH-------- */}
         {/* ------AMISHA-------- */}
         {/* ------DEEPTI-------- */}
+        <Stack.Screen name="Crtprescription" component={Crtprescription} options={{ headerShown: false }} />
+        <Stack.Screen name="Prescription" component={Prescription} options={{ headerShown: false }} />
+        <Stack.Screen name="Patientlist" component={Patientlist} options={{ headerShown: false }} />
+        <Stack.Screen name="Checkprescription" component={Checkprescription} options={{ headerShown: false }} />
+        <Stack.Screen name="Memberahipfreetrail" component={Memberahipfreetrail} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>
