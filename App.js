@@ -22,6 +22,7 @@ import Prescription from './Screens/Prescription'
 import Patientlist from './Screens/Patientlist';
 import Checkprescription from './Screens/Checkprescription';
 import Memberahipfreetrail from './Screens/Membershipfreetrail';
+import EditorScreen from './Component/Editorscreen';
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Stack.Screen name="Patientlist" component={Patientlist} options={{ headerShown: false }} />
         <Stack.Screen name="Checkprescription" component={Checkprescription} options={{ headerShown: false }} />
         <Stack.Screen name="Memberahipfreetrail" component={Memberahipfreetrail} options={{ headerShown: false }} />
+        <Stack.Screen name="EditorScreen" component={EditorScreen} options={{ headerShown: false }} />
 
       </Stack.Navigator>
     </NavigationContainer>

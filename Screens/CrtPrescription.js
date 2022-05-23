@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import FontAwesome5Icons from 'react-native-vector-icons/FontAwesome5'
 import { useNavigation } from "@react-navigation/native"
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import EditorScreen from '../Component/Editorscreen'
 
 const { height, width } = Dimensions.get("screen");
 
@@ -61,23 +62,12 @@ export default function Crtprescription() {
                 <View style={{ justifyContent: "center", alignItems: "center" }}>
                     <Text>OR</Text>
                 </View>
-                <View style={{ justifyContent: "center", alignContent: "center" }}>
-                    <View style={{ width: "90%", marginHorizontal: 20, marginVertical: 10 }}>
-                        <Text style={{ color: "black", letterSpacing: 0.9 }}>Please Write Here</Text>
-                    </View>
-
-                </View>
-                <View style={{ justifyContent: "center", alignContent: "center" }}>
-                    <View style={styles.inputBoxContainer} >
-                        {/* look here first one is icon then input box and then again icon */}
-                        <TextInput style={{ fontFamily: "Mulish" }} numberOfLines={15} multiline={true}></TextInput>
-                    </View>
-                </View>
+                <EditorScreen />
                 <View style={{ alignItems: "center" }}>
                     <LinearGradient colors={['#00E0C5', '#009987',]} style={styles.previewbtndiv}>
                         <TouchableOpacity
                             onPress={() => {
-                                navigation.navigate("Prescription", {
+                                navigation.navigate("Home", {
 
                                 })
                             }}
@@ -153,7 +143,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     previewbtndiv: {
-        width: 335,
+        width: 340,
         padding: 5,
         marginVertical: 10,
         justifyContent: "center",

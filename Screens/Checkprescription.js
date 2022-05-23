@@ -105,7 +105,7 @@ export default function Checkprescription() {
                                         <Text style={{ marginLeft: 5 }}>Start Time</Text>
                                         <View style={styles.inputBoxContainer1}>
                                             {/* look here first one is icon then input box and then again icon */}
-                                            <TextInput style={{ fontFamily: "Mulish" }}></TextInput>
+                                            <TextInput style={{ fontFamily: "Mulish" }} keyboardType='numeric'></TextInput>
 
                                         </View>
 
@@ -114,7 +114,7 @@ export default function Checkprescription() {
                                         <Text style={{ marginLeft: 5 }}>End Time</Text>
                                         <View style={styles.inputBoxContainer1}>
                                             {/* look here first one is icon then input box and then again icon */}
-                                            <TextInput style={{ fontFamily: "Mulish" }}></TextInput>
+                                            <TextInput style={{ fontFamily: "Mulish" }} keyboardType='numeric'></TextInput>
                                         </View>
 
                                     </View>
@@ -127,7 +127,7 @@ export default function Checkprescription() {
                                     <LinearGradient colors={['#00E0C5', '#009987',]} style={{ paddingHorizontal: 10, paddingVertical: 10, marginVertical: 20, borderRadius: 20 }}>
                                         <TouchableOpacity
                                             onPress={() => {
-                                                navigation.navigate("Home", {
+                                                navigation.navigate("Crtprescription", {
 
                                                 })
                                             }}

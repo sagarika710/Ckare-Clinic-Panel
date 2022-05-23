@@ -28,7 +28,7 @@ export default function Memberahipfreetrail() {
                 <LinearGradient colors={['#00E0C5', '#009987',]} style={styles.previewbtndiv}>
                     <TouchableOpacity
                         onPress={() => {
-                            navigation.navigate("Crtprescription", {
+                            navigation.navigate("Prescription", {
 
                             })
                         }}
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
     },
     previewbtndiv: {
-        width: 335,
+        width: 320,
         padding: 5,
         marginVertical: 10,
         justifyContent: "center",
